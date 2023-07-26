@@ -1,0 +1,34 @@
+.text-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+
+  @include for-size(phone-only) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    padding: 3rem 2.8rem 1.875rem 3.44rem;
+    border-right: var(--line);
+
+    @include for-size(tablet-down) {
+      padding: 2rem 1.5rem;
+    }
+
+    @include for-size(phone-only) {
+      border-bottom: var(--line);
+    }
+
+    &:nth-child(3n) {
+      border: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 2.5rem;
+    line-height: 1em;
+
+    @include for-size(phone-only) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

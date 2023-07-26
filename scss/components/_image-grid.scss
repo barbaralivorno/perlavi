@@ -1,0 +1,50 @@
+.image-grid {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+
+    &-item-media {
+      height: 15.56rem;
+    }
+  }
+
+  &__item {
+    border-bottom: var(--line);
+
+    &:nth-child(2) , &:nth-child(3), &:nth-child(4) {
+      &::before {
+        content: '';
+        border-left: var(--line);
+        width: 0.75px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    &:nth-child(4) {
+      &::before {
+        right: 75%;
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        right: 50%;
+      }
+    }
+
+    &:nth-child(3) {
+      &::before{
+        right: 25%;
+      }
+    }
+  }
+
+  &__title {
+    height: 9.875rem;
+    padding: 2.5rem;
+    line-height: 2.6rem;
+  }
+}

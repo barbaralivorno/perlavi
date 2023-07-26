@@ -1,0 +1,46 @@
+.projects {
+  border: none;
+  
+  &__list-item {
+    $this: &;
+
+    &:nth-child(even) {
+      #{$this}-image-wrapper {
+        order: 2;
+      }
+    }
+    
+    &-wrapper {
+      display: flex;
+      position: relative;
+
+      &:after {
+        content: '';
+        border-bottom: var(--line);
+        position: absolute;
+        width: calc(100% + 2*var(--wrapper-padding));
+        left: calc(-1 * var(--wrapper-padding));
+        bottom: 0;
+      }
+    }
+
+    &-image-wrapper {
+      flex: 1;
+    }
+
+    &-info {
+      width: 19.8vw;
+      padding: 3.4rem 3.47rem;
+      box-sizing: content-box;
+    }
+
+    &-pre-headline {
+      @include font-size(sm);
+    }
+
+    &-name {
+      margin: 1rem 0 1.9rem;
+      line-height: 1em;
+    }
+  }
+}
